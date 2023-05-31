@@ -60,6 +60,13 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs latest
 
+##instalando temas e icones##
+sudo add-apt-repository ppa:daniruiz/flat-remix -y && sudo apt-get update && sudo apt-get install flat-remix-gtk -y 
+sudo apt-get install flat-remix -y
+sudo apt-add-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-icon-theme numix-icon-theme-circle
+
 ## Finalização, atualização e limpeza##
 sudo apt update && sudo apt dist-upgrade -y
 flatpak update
