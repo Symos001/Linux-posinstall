@@ -60,5 +60,10 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs latest
 
+## Finalização, atualização e limpeza##
+sudo apt update && sudo apt dist-upgrade -y
+flatpak update
+sudo apt autoclean
+sudo apt autoremove -y
 
 
