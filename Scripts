@@ -1,0 +1,64 @@
+#!/bin/bash
+
+## Variaveis 
+URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+
+DIRETORIO_DOWNLOADS="$HOME/Downloads/programas"
+
+## Removendo Travas do apt ##
+sudo rm /var/lib/dpkg/lock-frontend; sudo rm/var/cache/apt/archives/lock
+
+
+## instalando flatpack ##
+sudo apt install flatpak
+sudo apt install --install-suggests gnome-software
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+
+
+##habilitando extensões no shell##
+sudo apt install gnome-shell-extensions
+sudo apt install chrome-gnome-shell
+
+
+## Atualizando o repositório ##
+
+sudo apt update
+
+## Download de programas externos ##
+
+mkdir "$DIRETORIO_DOWNLOADS"
+wget -c "$URL_GOOGLE_CHROME"       -P "$DIRETORIO_DOWNLOADS"
+
+
+
+##Download de programas flatpack##
+flatpak install flathub org.onlyoffice.desktopeditors -y
+flatpak install --user https://flathub.org/repo/appstream/org.codeblocks.codeblocks.flatpakref
+
+##Download de Snaps##
+sudo snap install pycharm-community
+sudo snap install code
+sudo snap install spotify
+
+#Instalando apps via ppa#
+
+sudo add-apt-repository -y ppa:ricotz/docky
+sudo apt-get update
+sudo apt-get install plank
+
+sudo add-apt-repository ppa:synapse-core/ppa -y && sudo apt-get update && sudo apt-get install synapse -y
+
+##instalar o asdf##
+sudo apt install git
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+
+##instalando nodejs##
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs latest
+
+
+
