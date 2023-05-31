@@ -36,10 +36,11 @@ wget -c "$URL_GOOGLE_CHROME"       -P "$DIRETORIO_DOWNLOADS"
 ##Download de programas flatpack##
 flatpak install flathub org.onlyoffice.desktopeditors -y
 flatpak install --user https://flathub.org/repo/appstream/org.codeblocks.codeblocks.flatpakref
+sudo apt install codeblocks
 
 ##Download de Snaps##
-sudo snap install pycharm-community
-sudo snap install code
+sudo snap install pycharm-community --classic
+sudo snap install code --classic  
 sudo snap install spotify
 
 #Instalando apps via ppa#
